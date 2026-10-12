@@ -3,6 +3,41 @@
 
 @string{aps = {American Physical Society,}}
 
+@article{gogolashvili2026minimax,
+  abbr={arXiv},
+  title={Minimax Estimation of Kernel Stein Discrepancy: Trace versus Hilbert-Schmidt Scales},
+  author={Gogolashvili, Davit},
+  journal={arXiv preprint arXiv:2607.03367},
+  abstract = {Kernel Stein Discrepancy (KSD) compares a sample to a fixed target distribution known only through its score, and is widely used for goodness-of-fit testing, sample quality assessment, and approximate inference. We study the estimation of $\operatorname{KSD}(P_0,P)$ from $n$ independent observations and identify the sharp spectral constant governing the minimax risk: it is the Hilbert-Schmidt norm of the Stein covariance operator $C_\star$, giving the minimax scale $\sqrt{\|C_\star\|_{\mathrm{HS}}/n}$. This scale is attained by the positive-part square-root U-statistic, whereas the standard plug-in V-statistic remains at the trace scale $\sqrt{\operatorname{tr}(C_\star)/n}$ and is therefore suboptimal by the fourth root of the effective rank of $C_\star$; for a Gaussian target with a fixed-bandwidth Gaussian kernel this factor is exponential in the dimension.},
+  html = {https://arxiv.org/abs/2607.03367},
+  year={2026}
+}
+
+@inproceedings{bayer2026local,
+  abbr={AISTATS},
+  title={Local Regression on Path Spaces with Signature Metrics},
+  author={Bayer, Christian and Gogolashvili, Davit and Pelizzari, Luca},
+  booktitle={Proceedings of The 29th International Conference on Artificial Intelligence and Statistics},
+  series={Proceedings of Machine Learning Research},
+  volume={300},
+  pages={2755--2763},
+  publisher={PMLR},
+  abstract = {We study nonparametric regression and classification for path-valued data. We introduce a functional Nadaraya-Watson estimator that combines the signature transform from rough path theory with local kernel regression. The signature transform provides a principled way to encode sequential data through iterated integrals, enabling direct comparison of paths in a natural metric space. Our approach leverages signature-induced distances within the classical kernel regression framework, achieving computational efficiency while avoiding the scalability bottlenecks of large-scale kernel matrix operations. We establish finite-sample convergence bounds demonstrating favorable statistical properties of signature-based distances compared to traditional metrics in infinite-dimensional settings. We propose robust signature variants that provide stability against outliers, enhancing practical performance. Applications to both synthetic and real-world data — including stochastic differential equation learning and time series classification — demonstrate competitive accuracy while offering significant computational advantages over existing methods.},
+  html = {https://proceedings.mlr.press/v300/bayer26a.html},
+  arxiv = {2510.16728},
+  year={2026}
+}
+
+@article{gogolashvili2022importance,
+  abbr={arXiv},
+  title={Importance Weighting Correction of Regularized Least-Squares for Target Shift},
+  author={Gogolashvili, Davit},
+  journal={arXiv preprint arXiv:2210.09709},
+  abstract = {Importance weighting is a standard tool for correcting distribution shift, but its statistical behavior under target shift — where the label distribution changes between training and testing while the conditional distribution of inputs given the label remains stable — remains under-explored. We analyze importance-weighted kernel ridge regression under target shift and show that, because the weights depend only on the output variable, reweighting corrects the train-test mismatch without altering the input-space complexity that governs kernel generalization. Under standard RKHS regularity and capacity conditions and a mild Bernstein-type moment condition on the label weights, we obtain finite-sample guarantees showing that the estimator achieves the same convergence behavior as in the no-shift case, with shift severity affecting only the constants through weight moments. We complement these results with matching minimax lower bounds, establishing rate optimality and quantifying the unavoidable dependence on shift severity. We further study more general weighting schemes and prove that weight misspecification induces an irreducible bias: the estimator concentrates around an induced population regression function that generally differs from the desired test regression function unless the weights are accurate. Finally, we derive consequences for plug-in classification under target shift via standard calibration arguments.},
+  html = {https://arxiv.org/abs/2210.09709},
+  year={2026}
+}
+
 @article{gogolashvili2023when,
   abbr={arXiv},
   title={When is Importance Weighting Correction Needed for Covariate Shift Adaptation?},
@@ -16,8 +51,11 @@
 @article{akhavan2022estimating,
   abbr={JMLR},
   author  = {Akhavan, Arya and Gogolashvili, Davit and Tsybakov, Alexandre B.},
-  title   = {Estimating the Minimizer and the Minimum Value of a Regression Function},
+  title   = {Estimating the Minimizer and the Minimum Value of a Regression Function under Passive Design},
   journal = {Journal of Machine Learning Research},
+  volume  = {25},
+  number  = {11},
+  pages   = {1--37},
   year    = {2024},
   abstract = {We propose a new method for estimating the minimizer $\boldsymbol{x}^*$ and the minimum value $f^*$ of a smooth and strongly convex regression function $f$ from the observations contaminated by random noise. Our estimator $\boldsymbol{z}_n$ of the minimizer $\boldsymbol{x}^*$ is based on a version of the projected gradient descent with the gradient estimated by a regularized local polynomial algorithm. Next, we propose a two-stage procedure for estimation of the minimum value $f^*$ of regression function $f$. At the first stage, we construct an accurate enough estimator of $\boldsymbol{x}^*$, which can be, for example, $\boldsymbol{z}_n$. At the second stage, we estimate the function value at the point obtained in the first stage using a rate optimal nonparametric procedure. We derive non-asymptotic upper bounds for the quadratic risk and optimization risk of $\boldsymbol{z}_n$, and for the risk of estimating $f^*$. We establish minimax lower bounds showing that, under certain choice of parameters, the proposed algorithms achieve the minimax optimal rates of convergence  on the class of smooth and strongly convex functions.},
   html = {http://jmlr.org/papers/v25/22-1396.html}
