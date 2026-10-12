@@ -1,0 +1,81 @@
+# Content of the reading-group page at /reading-group/.
+# Edit the text here. The page title and markup are in _pages/reading-group.html.
+
+organizer: Davit Gogolashvili
+group: WIAS Research Group 6
+
+# Introductory text. Markdown (links, emphasis) is allowed.
+description: >-
+  This reading group explores the mathematical and statistical foundations of
+  transformers. We will start with the architecture and basic concepts, then
+  study expressivity, in-context learning, generalization, and statistical
+  estimation. Participants are encouraged to suggest papers and help shape the
+  reading program.
+
+# Meetings. Every field is optional free text, shown as written. Keep values in
+# quotes (an unquoted time such as 14:00 is misread). Empty fields are left out,
+# and a meeting with nothing filled in is not shown at all. Copy the block to
+# list more meetings.
+# This file is public: a Zoom link entered here is visible to everyone.
+meetings:
+  - date: ""
+    time: ""
+    location: ""
+    presenter: ""
+    zoom: ""
+
+program:
+  title: Initial reading program
+  note: This sequence is tentative.
+  papers:
+    - title: Attention Is All You Need
+      authors: Vaswani et al.
+      venue: NeurIPS 2017
+      url: https://arxiv.org/abs/1706.03762
+      description: >-
+        The foundational transformer paper. Our starting point for understanding
+        self-attention, multi-head attention, positional encodings, and the
+        overall architecture.
+
+    - title: A Mathematical Perspective on Transformers
+      authors: Geshkovski, Letrouit, Polyanskiy, and Rigollet
+      venue: Bulletin of the AMS 2025; preprint 2023
+      url: https://arxiv.org/abs/2312.10794
+      description: >-
+        A mathematical introduction to transformers through interacting particle
+        systems and attention dynamics. We will initially focus on the
+        introductory and modeling material.
+
+    - title: "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes"
+      authors: Garg, Tsipras, Liang, and Valiant
+      venue: NeurIPS 2022
+      url: https://arxiv.org/abs/2208.01066
+      description: >-
+        An accessible experimental introduction to in-context learning through
+        regression tasks and comparisons with classical estimators.
+
+    - title: Transformers Learn In-Context by Gradient Descent
+      authors: von Oswald et al.
+      venue: ICML 2023
+      url: https://proceedings.mlr.press/v202/von-oswald23a.html
+      description: >-
+        Shows how a linear attention layer can implement a gradient step for
+        regression, connecting transformer computations with familiar learning
+        algorithms.
+
+    - title: "Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection"
+      authors: Bai, Chen, Wang, Xiong, and Mei
+      venue: NeurIPS 2023
+      url: https://arxiv.org/abs/2306.04637
+      description: >-
+        Develops statistical theory for transformers implementing classical
+        estimators and selecting algorithms adaptively from the context.
+
+suggestions:
+  invitation: >-
+    Which paper should we read next? Suggest a paper relevant to the
+    statistical theory of transformers.
+  # Address of the Google Sheet script that stores the suggestions; it ends in
+  # /exec (setup: "Paper suggestions" in README.md). While this is empty, the
+  # page shows no form and says that suggestions are not open yet.
+  endpoint: "https://script.google.com/macros/s/AKfycbwxCsHAgjojJgF-BLrL2UGQT50Vg69FTXXPKlzYcXSErB8zHeDjgyBp8Jb4kxcQ9Lb5/exec"

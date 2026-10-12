@@ -1,0 +1,134 @@
+---
+layout: page
+permalink: /reading-group/
+title: Statistical Theory of Transformers
+description: WIAS reading group
+sitemap: false
+---
+<!-- _pages/reading-group.html: the text comes from _data/reading_group.yml -->
+{%- assign rg = site.data.reading_group -%}
+{%- assign endpoint = rg.suggestions.endpoint | append: '' | strip -%}
+
+<div class="reading-group" id="reading-group" data-endpoint="{{ endpoint | escape }}">
+
+  <p class="rg-meta">
+    Organizer: <strong>{{ rg.organizer | escape }}</strong><br>
+    Group: <strong>{{ rg.group | escape }}</strong>
+  </p>
+
+  {{ rg.description | markdownify }}
+
+  {%- if endpoint != '' %}
+  <p>
+    <a class="btn btn-sm z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
+  </p>
+  {%- endif %}
+
+  {%- comment %} Meetings: only the filled-in fields of filled-in meetings are shown. {% endcomment -%}
+  {%- capture meetings_html -%}
+    {%- for meeting in rg.meetings -%}
+      {%- assign date = meeting.date | append: '' | strip -%}
+      {%- assign time = meeting.time | append: '' | strip -%}
+      {%- assign location = meeting.location | append: '' | strip -%}
+      {%- assign presenter = meeting.presenter | append: '' | strip -%}
+      {%- assign zoom = meeting.zoom | append: '' | strip -%}
+      {%- capture filled -%}{{ date }}{{ time }}{{ location }}{{ presenter }}{{ zoom }}{%- endcapture -%}
+      {%- if filled != '' %}
+      <li class="rg-meeting">
+        <dl class="row">
+          {%- if date != '' %}<dt class="col-sm-3">Date</dt><dd class="col-sm-9">{{ date | escape }}</dd>{% endif -%}
+          {%- if time != '' %}<dt class="col-sm-3">Time</dt><dd class="col-sm-9">{{ time | escape }}</dd>{% endif -%}
+          {%- if location != '' %}<dt class="col-sm-3">Location</dt><dd class="col-sm-9">{{ location | escape }}</dd>{% endif -%}
+          {%- if presenter != '' %}<dt class="col-sm-3">Presenter</dt><dd class="col-sm-9">{{ presenter | escape }}</dd>{% endif -%}
+          {%- if zoom != '' %}<dt class="col-sm-3">Zoom</dt><dd class="col-sm-9"><a href="{{ zoom | escape }}">Join the meeting</a></dd>{% endif -%}
+        </dl>
+      </li>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign meetings_html = meetings_html | strip -%}
+  {%- if meetings_html != '' %}
+  <h2 id="meetings">Meetings</h2>
+  <ul class="rg-meetings">
+    {{ meetings_html }}
+  </ul>
+  {%- endif %}
+
+  <h2 id="reading-program">{{ rg.program.title | escape }}</h2>
+  <p class="rg-note">{{ rg.program.note | escape }}</p>
+  <ol class="rg-papers">
+    {%- for paper in rg.program.papers %}
+    <li class="rg-paper" data-paper-url="{{ paper.url | escape }}" data-paper-title="{{ paper.title | escape }}">
+      <div class="rg-paper-title"><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></div>
+      <div class="rg-paper-source">{{ paper.authors | escape }}{% if paper.venue %}, <em>{{ paper.venue | escape }}</em>{% endif %}</div>
+      <p class="rg-paper-description">{{ paper.description | escape }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+
+  {%- if endpoint == '' %}
+
+  <h2 id="suggest-a-paper">Suggest a paper</h2>
+  <p class="rg-status">Paper suggestions are not open yet.</p>
+
+  {%- else %}
+
+  <h2 id="suggested-papers">Suggested papers</h2>
+  <p class="rg-note">
+    Suggestions from participants, newest first. They are kept separate from the reading program above.
+    <button type="button" class="btn btn-link btn-sm rg-refresh" id="rg-refresh" hidden>Refresh</button>
+  </p>
+  <div id="rg-suggestions" aria-live="polite">
+    <p class="rg-status">Loading suggestions…</p>
+  </div>
+  <noscript>
+    <p class="rg-status">Showing and submitting suggestions needs JavaScript.</p>
+  </noscript>
+
+  <h2 id="suggest-a-paper">Suggest a paper</h2>
+  <p>{{ rg.suggestions.invitation | escape }}</p>
+  <p class="rg-note">No account is needed. Your suggestion appears under “Suggested papers” for everyone as soon as it is saved.</p>
+
+  <form class="rg-form" id="rg-form">
+    <div class="form-group">
+      <label for="rg-title">Paper title</label>
+      <input type="text" class="form-control" id="rg-title" name="title" maxlength="300" required autocomplete="off">
+      <div class="invalid-feedback" id="rg-title-error"></div>
+    </div>
+    <div class="form-group">
+      <label for="rg-url">Paper URL</label>
+      <input type="text" inputmode="url" class="form-control" id="rg-url" name="url" maxlength="500" required autocomplete="off" placeholder="https://arxiv.org/abs/…" aria-describedby="rg-url-help">
+      <small class="form-text rg-note" id="rg-url-help">A link to arXiv, a journal, conference proceedings, OpenReview, or another publication page.</small>
+      <div class="invalid-feedback" id="rg-url-error"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-9">
+        <label for="rg-authors">Authors <span class="rg-optional">(optional)</span></label>
+        <input type="text" class="form-control" id="rg-authors" name="authors" maxlength="300" autocomplete="off">
+        <div class="invalid-feedback" id="rg-authors-error"></div>
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="rg-year">Year <span class="rg-optional">(optional)</span></label>
+        <input type="text" inputmode="numeric" class="form-control" id="rg-year" name="year" maxlength="4" autocomplete="off">
+        <div class="invalid-feedback" id="rg-year-error"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="rg-contributor">Your name</label>
+      <input type="text" class="form-control" id="rg-contributor" name="contributor" maxlength="100" required autocomplete="name">
+      <div class="invalid-feedback" id="rg-contributor-error"></div>
+    </div>
+    {%- comment %} Hidden from people; automated senders fill it in and are turned away. {% endcomment %}
+    <div class="rg-trap" aria-hidden="true">
+      <label for="rg-website">Leave this field empty</label>
+      <input type="text" id="rg-website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-sm z-depth-0 rg-button">Submit suggestion</button>
+    <div class="rg-form-status" id="rg-form-status" role="status" aria-live="polite"></div>
+  </form>
+
+  <script defer src="{{ '/assets/js/reading-group.js' | relative_url }}"></script>
+
+  {%- endif %}
+
+</div>
