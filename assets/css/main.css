@@ -1082,9 +1082,11 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
 .reading-group .rg-button {
   color: var(--global-hover-text-color);
   background-color: var(--global-theme-color);
-  border: 1px solid var(--global-theme-color);
+  border: 2px solid var(--global-theme-color);
   margin-left: 0;
-  padding: 0.4rem 1.25rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 .reading-group .rg-button:hover, .reading-group .rg-button:focus {
   color: var(--global-theme-color);
@@ -1094,18 +1096,22 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   opacity: 0.6;
   pointer-events: none;
 }
+.reading-group .rg-button-outline {
+  color: var(--global-theme-color);
+  background-color: transparent;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+}
+.reading-group .rg-button-outline:hover, .reading-group .rg-button-outline:focus {
+  color: var(--global-hover-text-color);
+  background-color: var(--global-theme-color);
+}
 .reading-group .rg-trap {
   position: absolute;
   left: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-.reading-group .rg-refresh {
-  color: var(--global-theme-color);
-  margin: 0;
-  padding: 0 0.25rem;
-  vertical-align: baseline;
 }
 .reading-group .rg-papers {
   padding-left: 1.5rem;

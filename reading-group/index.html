@@ -34,7 +34,7 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1791807635">
     <link rel="canonical" href="https://davit1123.github.io/reading-group/">
 
     <!-- Dark Mode -->
@@ -125,7 +125,7 @@
   <p>This reading group explores the mathematical and statistical foundations of transformers. We will start with the architecture and basic concepts, then study expressivity, in-context learning, generalization, and statistical estimation. Participants are encouraged to suggest papers and help shape the reading program.</p>
 
   <p>
-    <a class="btn btn-sm z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
+    <a class="btn z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
   </p>
 
   <h2 id="reading-program">Initial reading program</h2>
@@ -164,9 +164,9 @@
   </ol>
 
   <h2 id="suggested-papers">Suggested papers</h2>
-  <p class="rg-note">
-    Suggestions from participants, newest first. They are kept separate from the reading program above.
-    <button type="button" class="btn btn-link btn-sm rg-refresh" id="rg-refresh" hidden>Refresh</button>
+  <p class="rg-note">Suggestions from participants, newest first. They are kept separate from the reading program above.</p>
+  <p>
+    <button type="button" class="btn z-depth-0 rg-button rg-button-outline" id="rg-refresh" hidden><i class="fas fa-rotate-right" aria-hidden="true"></i> Refresh</button>
   </p>
   <div id="rg-suggestions" aria-live="polite">
     <p class="rg-status">Loading suggestions…</p>
@@ -212,11 +212,11 @@
       <label for="rg-website">Leave this field empty</label>
       <input type="text" id="rg-website" name="website" tabindex="-1" autocomplete="off">
     </div>
-    <button type="submit" class="btn btn-sm z-depth-0 rg-button">Submit suggestion</button>
+    <button type="submit" class="btn z-depth-0 rg-button">Submit suggestion</button>
     <div class="rg-form-status" id="rg-form-status" role="status" aria-live="polite"></div>
   </form>
 
-  <script defer src="/assets/js/reading-group.js"></script>
+  <script defer src="/assets/js/reading-group.js?v=1791807635"></script>
 
 </div>
 
