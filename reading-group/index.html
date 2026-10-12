@@ -34,7 +34,7 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="/assets/css/main.css?v=1791808320">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1791811545">
     <link rel="canonical" href="https://davit1123.github.io/reading-group/">
 
     <!-- Dark Mode -->
@@ -72,50 +72,60 @@
 
           <article>
             <!-- _pages/reading-group.html: the text comes from _data/reading_group.yml --><div class="reading-group" id="reading-group" data-endpoint="https://script.google.com/macros/s/AKfycbwxCsHAgjojJgF-BLrL2UGQT50Vg69FTXXPKlzYcXSErB8zHeDjgyBp8Jb4kxcQ9Lb5/exec">
+  <dl class="row rg-organization">
+    <dt class="col-sm-2">Organizer</dt>
+    <dd class="col-sm-10">Davit Gogolashvili</dd>
+    <dt class="col-sm-2">Group</dt>
+    <dd class="col-sm-10">WIAS Research Group 6</dd>
+    <dt class="col-sm-2">Format</dt>
+    <dd class="col-sm-10">Each session is led by a moderator: 90 minutes of reading with a 15-minute break.</dd>
+  </dl>
+  <p>Meetings will take place on TBA, starting from TBA. We will use the Zoom platform, using the link TBA.</p>
 
-  <p class="rg-meta">
-    Organizer: <strong>Davit Gogolashvili</strong><br>
-    Group: <strong>WIAS Research Group 6</strong>
-  </p>
-
-  <p>This reading group explores the mathematical and statistical foundations of transformers. We will start with the architecture and basic concepts, then study expressivity, in-context learning, generalization, and statistical estimation. Participants are encouraged to suggest papers and help shape the reading program.</p>
-
+  <div class="rg-notice" role="note">
+<p><strong>Attention:</strong> The above link is provisional and may change on short notice!</p>
+</div>
   <p>
     <a class="btn z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
   </p>
 
   <h2 id="reading-program">Initial reading program <span class="rg-tag">Tentative</span>
 </h2>
+  <h3 class="rg-section">Introductions</h3>
   <ol class="rg-papers">
     <li class="rg-paper" data-paper-url="https://arxiv.org/abs/1706.03762" data-paper-title="Attention Is All You Need">
       <div class="rg-paper-title"><a href="https://arxiv.org/abs/1706.03762" rel="external nofollow noopener" target="_blank">Attention Is All You Need</a></div>
       <div class="rg-paper-source">Vaswani et al., <em>NeurIPS 2017</em>
 </div>
-      <p class="rg-paper-description">The foundational transformer paper. Our starting point for understanding self-attention, multi-head attention, positional encodings, and the overall architecture.</p>
+      <p class="rg-paper-description">The foundational architecture: attention, positional encodings, and transformer blocks.</p>
     </li>
     <li class="rg-paper" data-paper-url="https://arxiv.org/abs/2312.10794" data-paper-title="A Mathematical Perspective on Transformers">
       <div class="rg-paper-title"><a href="https://arxiv.org/abs/2312.10794" rel="external nofollow noopener" target="_blank">A Mathematical Perspective on Transformers</a></div>
-      <div class="rg-paper-source">Geshkovski, Letrouit, Polyanskiy, and Rigollet, <em>Bulletin of the AMS 2025; preprint 2023</em>
+      <div class="rg-paper-source">Geshkovski, Letrouit, Polyanskiy &amp; Rigollet, <em>Bulletin of the AMS 2025</em>
 </div>
-      <p class="rg-paper-description">A mathematical introduction to transformers through interacting particle systems and attention dynamics. We will initially focus on the introductory and modeling material.</p>
+      <p class="rg-paper-description">A mathematical entry point, particularly suitable for WIAS. Read the introductory sections first; the attention dynamics can be studied later.</p>
     </li>
-    <li class="rg-paper" data-paper-url="https://arxiv.org/abs/2208.01066" data-paper-title="What Can Transformers Learn In-Context? A Case Study of Simple Function Classes">
-      <div class="rg-paper-title"><a href="https://arxiv.org/abs/2208.01066" rel="external nofollow noopener" target="_blank">What Can Transformers Learn In-Context? A Case Study of Simple Function Classes</a></div>
-      <div class="rg-paper-source">Garg, Tsipras, Liang, and Valiant, <em>NeurIPS 2022</em>
+    <li class="rg-paper" data-paper-url="https://papers.nips.cc/paper_files/paper/2022/hash/c529dba08a146ea8d6cf715ae8930cbe-Abstract-Conference.html" data-paper-title="What Can Transformers Learn In-Context? A Case Study of Simple Function Classes">
+      <div class="rg-paper-title"><a href="https://papers.nips.cc/paper_files/paper/2022/hash/c529dba08a146ea8d6cf715ae8930cbe-Abstract-Conference.html" rel="external nofollow noopener" target="_blank">What Can Transformers Learn In-Context? A Case Study of Simple Function Classes</a></div>
+      <div class="rg-paper-source">Garg, Tsipras, Liang &amp; Valiant, <em>NeurIPS 2022</em>
 </div>
-      <p class="rg-paper-description">An accessible experimental introduction to in-context learning through regression tasks and comparisons with classical estimators.</p>
+      <p class="rg-paper-description">An accessible experimental introduction connecting transformers with familiar statistical estimation problems.</p>
     </li>
-    <li class="rg-paper" data-paper-url="https://proceedings.mlr.press/v202/von-oswald23a.html" data-paper-title="Transformers Learn In-Context by Gradient Descent">
-      <div class="rg-paper-title"><a href="https://proceedings.mlr.press/v202/von-oswald23a.html" rel="external nofollow noopener" target="_blank">Transformers Learn In-Context by Gradient Descent</a></div>
-      <div class="rg-paper-source">von Oswald et al., <em>ICML 2023</em>
+  </ol>
+  <h3 class="rg-section">Nonparametric estimation and minimax theory</h3>
+  <p class="rg-note">Approximation rates, smoothness assumptions, representation learning, and statistical optimality.</p>
+  <ol class="rg-papers">
+    <li class="rg-paper" data-paper-url="https://proceedings.mlr.press/v202/takakura23a.html" data-paper-title="Approximation and Estimation Ability of Transformers for Sequence-to-Sequence Functions with Infinite Dimensional Input">
+      <div class="rg-paper-title"><a href="https://proceedings.mlr.press/v202/takakura23a.html" rel="external nofollow noopener" target="_blank">Approximation and Estimation Ability of Transformers for Sequence-to-Sequence Functions with Infinite Dimensional Input</a></div>
+      <div class="rg-paper-source">Takakura &amp; Suzuki, <em>ICML 2023</em>
 </div>
-      <p class="rg-paper-description">Shows how a linear attention layer can implement a gradient step for regression, connecting transformer computations with familiar learning algorithms.</p>
+      <p class="rg-paper-description">Nonparametric estimation with anisotropic smoothness and dynamic feature extraction.</p>
     </li>
-    <li class="rg-paper" data-paper-url="https://arxiv.org/abs/2306.04637" data-paper-title="Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection">
-      <div class="rg-paper-title"><a href="https://arxiv.org/abs/2306.04637" rel="external nofollow noopener" target="_blank">Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection</a></div>
-      <div class="rg-paper-source">Bai, Chen, Wang, Xiong, and Mei, <em>NeurIPS 2023</em>
+    <li class="rg-paper" data-paper-url="https://arxiv.org/abs/2408.12186" data-paper-title="Transformers Are Minimax Optimal Nonparametric In-Context Learners">
+      <div class="rg-paper-title"><a href="https://arxiv.org/abs/2408.12186" rel="external nofollow noopener" target="_blank">Transformers Are Minimax Optimal Nonparametric In-Context Learners</a></div>
+      <div class="rg-paper-source">Kim, Nakamaki &amp; Suzuki, <em>NeurIPS 2024</em>
 </div>
-      <p class="rg-paper-description">Develops statistical theory for transformers implementing classical estimators and selecting algorithms adaptively from the context.</p>
+      <p class="rg-paper-description">Estimation bounds and information-theoretic lower bounds, separating pretraining tasks from in-context examples.</p>
     </li>
   </ol>
 
@@ -172,7 +182,7 @@
     <div class="rg-form-status" id="rg-form-status" role="status" aria-live="polite"></div>
   </form>
 
-  <script defer src="/assets/js/reading-group.js?v=1791808320"></script>
+  <script defer src="/assets/js/reading-group.js?v=1791811545"></script>
 
 </div>
 

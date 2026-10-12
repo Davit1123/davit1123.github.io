@@ -1076,6 +1076,12 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   font-size: 1.5rem;
   scroll-margin-top: 0;
 }
+.reading-group h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
 .reading-group .rg-tag {
   display: inline-block;
   margin-left: 0.5rem;
@@ -1163,15 +1169,27 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   overflow-wrap: anywhere;
   white-space: pre-line;
 }
-.reading-group .rg-meetings {
-  list-style: none;
-  padding-left: 0;
-}
-.reading-group .rg-meetings dl {
+.reading-group .rg-organization {
   margin-bottom: 1rem;
 }
-.reading-group .rg-meetings dt {
+.reading-group .rg-organization dt {
   font-weight: 500;
+}
+.reading-group .rg-organization dd {
+  margin-bottom: 0.35rem;
+}
+.reading-group .rg-notice {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-left: 3px solid var(--global-warning-block);
+  background-color: var(--global-warning-block-bg);
+  font-size: 0.8rem;
+}
+.reading-group .rg-notice p,
+.reading-group .rg-notice strong {
+  margin: 0;
+  color: var(--global-warning-block-text);
 }
 .reading-group .rg-form {
   max-width: 40rem;
