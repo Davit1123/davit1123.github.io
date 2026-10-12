@@ -13,6 +13,14 @@
     scroll-margin-top: 0;
   }
 
+  // A section of the reading program.
+  h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
   // A small label next to a heading, such as "Tentative".
   .rg-tag {
     display: inline-block;
@@ -123,16 +131,32 @@
     white-space: pre-line; // keeps the line breaks of a submitted explanation
   }
 
-  .rg-meetings {
-    list-style: none;
-    padding-left: 0;
-
-    dl {
-      margin-bottom: 1rem;
-    }
+  // The organizational details at the top of the page.
+  .rg-organization {
+    margin-bottom: 1rem;
 
     dt {
       font-weight: 500;
+    }
+
+    dd {
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  // A small highlighted note, in the theme's warning colours.
+  .rg-notice {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-left: 3px solid var(--global-warning-block);
+    background-color: var(--global-warning-block-bg);
+    font-size: 0.8rem;
+
+    p,
+    strong {
+      margin: 0;
+      color: var(--global-warning-block-text);
     }
   }
 

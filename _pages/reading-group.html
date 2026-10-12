@@ -12,12 +12,32 @@ standalone: true # no site navigation at the top of this page
 
 <div class="reading-group" id="reading-group" data-endpoint="{{ endpoint | escape }}">
 
-  <p class="rg-meta">
-    Organizer: <strong>{{ rg.organizer | escape }}</strong><br>
-    Group: <strong>{{ rg.group | escape }}</strong>
-  </p>
-
-  {{ rg.description | markdownify }}
+  {%- comment %} Organizational details: only the filled-in parts are shown. {% endcomment -%}
+  {%- assign org = rg.organization -%}
+  {%- assign labels = 'organizer:Organizer,group:Group,format:Format' | split: ',' %}
+  <dl class="row rg-organization">
+    {%- for label in labels -%}
+      {%- assign pair = label | split: ':' -%}
+      {%- assign field = pair[0] -%}
+      {%- assign value = org[field] | append: '' | strip -%}
+      {%- if value != '' %}
+    <dt class="col-sm-2">{{ pair[1] }}</dt>
+    <dd class="col-sm-10">{{ value | escape }}</dd>
+      {%- endif -%}
+    {%- endfor %}
+  </dl>
+  {%- assign details = org.details | append: '' | strip -%}
+  {%- assign notice = org.notice | append: '' | strip -%}
+  {%- assign contact = org.contact | append: '' | strip -%}
+  {%- if details != '' %}
+  {{ details | markdownify }}
+  {%- endif -%}
+  {%- if notice != '' %}
+  <div class="rg-notice" role="note">{{ notice | markdownify }}</div>
+  {%- endif -%}
+  {%- if contact != '' %}
+  {{ contact | markdownify }}
+  {%- endif %}
 
   {%- if endpoint != '' %}
   <p>
@@ -25,46 +45,26 @@ standalone: true # no site navigation at the top of this page
   </p>
   {%- endif %}
 
-  {%- comment %} Meetings: only the filled-in fields of filled-in meetings are shown. {% endcomment -%}
-  {%- capture meetings_html -%}
-    {%- for meeting in rg.meetings -%}
-      {%- assign date = meeting.date | append: '' | strip -%}
-      {%- assign time = meeting.time | append: '' | strip -%}
-      {%- assign location = meeting.location | append: '' | strip -%}
-      {%- assign presenter = meeting.presenter | append: '' | strip -%}
-      {%- assign zoom = meeting.zoom | append: '' | strip -%}
-      {%- capture filled -%}{{ date }}{{ time }}{{ location }}{{ presenter }}{{ zoom }}{%- endcapture -%}
-      {%- if filled != '' %}
-      <li class="rg-meeting">
-        <dl class="row">
-          {%- if date != '' %}<dt class="col-sm-3">Date</dt><dd class="col-sm-9">{{ date | escape }}</dd>{% endif -%}
-          {%- if time != '' %}<dt class="col-sm-3">Time</dt><dd class="col-sm-9">{{ time | escape }}</dd>{% endif -%}
-          {%- if location != '' %}<dt class="col-sm-3">Location</dt><dd class="col-sm-9">{{ location | escape }}</dd>{% endif -%}
-          {%- if presenter != '' %}<dt class="col-sm-3">Presenter</dt><dd class="col-sm-9">{{ presenter | escape }}</dd>{% endif -%}
-          {%- if zoom != '' %}<dt class="col-sm-3">Zoom</dt><dd class="col-sm-9"><a href="{{ zoom | escape }}">Join the meeting</a></dd>{% endif -%}
-        </dl>
-      </li>
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- assign meetings_html = meetings_html | strip -%}
-  {%- if meetings_html != '' %}
-  <h2 id="meetings">Meetings</h2>
-  <ul class="rg-meetings">
-    {{ meetings_html }}
-  </ul>
-  {%- endif %}
-
   <h2 id="reading-program">{{ rg.program.title | escape }}{% if rg.program.tag %} <span class="rg-tag">{{ rg.program.tag | escape }}</span>{% endif %}</h2>
+  {%- for section in rg.program.sections %}
+  <h3 class="rg-section">{{ section.name | escape }}</h3>
+  {%- if section.description %}
+  <p class="rg-note">{{ section.description | escape }}</p>
+  {%- endif %}
   <ol class="rg-papers">
-    {%- for paper in rg.program.papers %}
+    {%- for paper in section.papers %}
     <li class="rg-paper" data-paper-url="{{ paper.url | escape }}" data-paper-title="{{ paper.title | escape }}">
-      <div class="rg-paper-title"><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></div>
+      <div class="rg-paper-title">
+        {%- if paper.url %}<a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif -%}
+      </div>
       <div class="rg-paper-source">{{ paper.authors | escape }}{% if paper.venue %}, <em>{{ paper.venue | escape }}</em>{% endif %}</div>
+      {%- if paper.description %}
       <p class="rg-paper-description">{{ paper.description | escape }}</p>
+      {%- endif %}
     </li>
     {%- endfor %}
   </ol>
+  {%- endfor %}
 
   {%- if endpoint == '' %}
 

@@ -1,75 +1,76 @@
 # Content of the reading-group page at /reading-group/.
 # Edit the text here. The page title and markup are in _pages/reading-group.html.
 
-organizer: Davit Gogolashvili
-group: WIAS Research Group 6
-
-# Introductory text. Markdown (links, emphasis) is allowed.
-description: >-
-  This reading group explores the mathematical and statistical foundations of
-  transformers. We will start with the architecture and basic concepts, then
-  study expressivity, in-context learning, generalization, and statistical
-  estimation. Participants are encouraged to suggest papers and help shape the
-  reading program.
-
-# Meetings. Every field is optional free text, shown as written. Keep values in
-# quotes (an unquoted time such as 14:00 is misread). Empty fields are left out,
-# and a meeting with nothing filled in is not shown at all. Copy the block to
-# list more meetings.
+# Organizational details, shown as a block at the top of the page. Keep each
+# value in quotes; an empty one ("") is left out of the page.
 # This file is public: a Zoom link entered here is visible to everyone.
-meetings:
-  - date: ""
-    time: ""
-    location: ""
-    presenter: ""
-    zoom: ""
+organization:
+  organizer: "Davit Gogolashvili"
+  group: "WIAS Research Group 6"
+  format: "Each session is led by a moderator: 90 minutes of reading with a 15-minute break."
+  # The three texts below allow Markdown: **bold**, and a pasted web address
+  # becomes a link. Replace each TBA once the detail is known.
+  details: "Meetings will take place on TBA, starting from TBA. We will use the Zoom platform, using the link TBA."
+  # Shown as a highlighted note.
+  notice: "**Attention:** The above link is provisional and may change on short notice!"
+  # An optional closing line, for example how to get in touch.
+  contact: ""
 
+# The reading program is a list of sections, each with its own numbered papers.
+# - To add a paper, copy one block starting with "- title:" into a section.
+# - To add a section, copy a whole block starting with "- name:".
+# A section's description and a paper's venue, url and description are optional.
 program:
   title: Initial reading program
   tag: Tentative # small label next to the heading; leave empty to remove it
-  papers:
-    - title: Attention Is All You Need
-      authors: Vaswani et al.
-      venue: NeurIPS 2017
-      url: https://arxiv.org/abs/1706.03762
-      description: >-
-        The foundational transformer paper. Our starting point for understanding
-        self-attention, multi-head attention, positional encodings, and the
-        overall architecture.
+  sections:
+    - name: Introductions
+      papers:
+        - title: Attention Is All You Need
+          authors: Vaswani et al.
+          venue: NeurIPS 2017
+          url: https://arxiv.org/abs/1706.03762
+          description: >-
+            The foundational architecture: attention, positional encodings, and
+            transformer blocks.
 
-    - title: A Mathematical Perspective on Transformers
-      authors: Geshkovski, Letrouit, Polyanskiy, and Rigollet
-      venue: Bulletin of the AMS 2025; preprint 2023
-      url: https://arxiv.org/abs/2312.10794
-      description: >-
-        A mathematical introduction to transformers through interacting particle
-        systems and attention dynamics. We will initially focus on the
-        introductory and modeling material.
+        - title: A Mathematical Perspective on Transformers
+          authors: Geshkovski, Letrouit, Polyanskiy & Rigollet
+          venue: Bulletin of the AMS 2025
+          url: https://arxiv.org/abs/2312.10794
+          description: >-
+            A mathematical entry point, particularly suitable for WIAS. Read the
+            introductory sections first; the attention dynamics can be studied
+            later.
 
-    - title: "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes"
-      authors: Garg, Tsipras, Liang, and Valiant
-      venue: NeurIPS 2022
-      url: https://arxiv.org/abs/2208.01066
-      description: >-
-        An accessible experimental introduction to in-context learning through
-        regression tasks and comparisons with classical estimators.
+        - title: "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes"
+          authors: Garg, Tsipras, Liang & Valiant
+          venue: NeurIPS 2022
+          url: https://papers.nips.cc/paper_files/paper/2022/hash/c529dba08a146ea8d6cf715ae8930cbe-Abstract-Conference.html
+          description: >-
+            An accessible experimental introduction connecting transformers with
+            familiar statistical estimation problems.
 
-    - title: Transformers Learn In-Context by Gradient Descent
-      authors: von Oswald et al.
-      venue: ICML 2023
-      url: https://proceedings.mlr.press/v202/von-oswald23a.html
+    - name: Nonparametric estimation and minimax theory
       description: >-
-        Shows how a linear attention layer can implement a gradient step for
-        regression, connecting transformer computations with familiar learning
-        algorithms.
+        Approximation rates, smoothness assumptions, representation learning,
+        and statistical optimality.
+      papers:
+        - title: Approximation and Estimation Ability of Transformers for Sequence-to-Sequence Functions with Infinite Dimensional Input
+          authors: Takakura & Suzuki
+          venue: ICML 2023
+          url: https://proceedings.mlr.press/v202/takakura23a.html
+          description: >-
+            Nonparametric estimation with anisotropic smoothness and dynamic
+            feature extraction.
 
-    - title: "Transformers as Statisticians: Provable In-Context Learning with In-Context Algorithm Selection"
-      authors: Bai, Chen, Wang, Xiong, and Mei
-      venue: NeurIPS 2023
-      url: https://arxiv.org/abs/2306.04637
-      description: >-
-        Develops statistical theory for transformers implementing classical
-        estimators and selecting algorithms adaptively from the context.
+        - title: Transformers Are Minimax Optimal Nonparametric In-Context Learners
+          authors: Kim, Nakamaki & Suzuki
+          venue: NeurIPS 2024
+          url: https://arxiv.org/abs/2408.12186
+          description: >-
+            Estimation bounds and information-theoretic lower bounds, separating
+            pretraining tasks from in-context examples.
 
 suggestions:
   invitation: >-
