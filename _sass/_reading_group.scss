@@ -26,9 +26,11 @@
   .rg-button {
     color: var(--global-hover-text-color);
     background-color: var(--global-theme-color);
-    border: 1px solid var(--global-theme-color);
+    border: 2px solid var(--global-theme-color);
     margin-left: 0;
-    padding: 0.4rem 1.25rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
 
     &:hover,
     &:focus {
@@ -42,6 +44,20 @@
     }
   }
 
+  // The secondary button: outlined, and filled on hover.
+  .rg-button-outline {
+    color: var(--global-theme-color);
+    background-color: transparent;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+
+    &:hover,
+    &:focus {
+      color: var(--global-hover-text-color);
+      background-color: var(--global-theme-color);
+    }
+  }
+
   // A field people never see or reach; see _pages/reading-group.html.
   .rg-trap {
     position: absolute;
@@ -49,13 +65,6 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
-  }
-
-  .rg-refresh {
-    color: var(--global-theme-color);
-    margin: 0;
-    padding: 0 0.25rem;
-    vertical-align: baseline;
   }
 
   .rg-papers {

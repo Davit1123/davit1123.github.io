@@ -20,7 +20,7 @@ sitemap: false
 
   {%- if endpoint != '' %}
   <p>
-    <a class="btn btn-sm z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
+    <a class="btn z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
   </p>
   {%- endif %}
 
@@ -74,9 +74,9 @@ sitemap: false
   {%- else %}
 
   <h2 id="suggested-papers">Suggested papers</h2>
-  <p class="rg-note">
-    Suggestions from participants, newest first. They are kept separate from the reading program above.
-    <button type="button" class="btn btn-link btn-sm rg-refresh" id="rg-refresh" hidden>Refresh</button>
+  <p class="rg-note">Suggestions from participants, newest first. They are kept separate from the reading program above.</p>
+  <p>
+    <button type="button" class="btn z-depth-0 rg-button rg-button-outline" id="rg-refresh" hidden><i class="fas fa-rotate-right" aria-hidden="true"></i> Refresh</button>
   </p>
   <div id="rg-suggestions" aria-live="polite">
     <p class="rg-status">Loading suggestions…</p>
@@ -123,11 +123,11 @@ sitemap: false
       <label for="rg-website">Leave this field empty</label>
       <input type="text" id="rg-website" name="website" tabindex="-1" autocomplete="off">
     </div>
-    <button type="submit" class="btn btn-sm z-depth-0 rg-button">Submit suggestion</button>
+    <button type="submit" class="btn z-depth-0 rg-button">Submit suggestion</button>
     <div class="rg-form-status" id="rg-form-status" role="status" aria-live="polite"></div>
   </form>
 
-  <script defer src="{{ '/assets/js/reading-group.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/reading-group.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
   {%- endif %}
 
