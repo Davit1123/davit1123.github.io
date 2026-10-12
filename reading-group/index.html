@@ -34,7 +34,7 @@
 
     <!-- Styles -->
     
-    <link rel="stylesheet" href="/assets/css/main.css?v=1791807635">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1791808320">
     <link rel="canonical" href="https://davit1123.github.io/reading-group/">
 
     <!-- Dark Mode -->
@@ -48,60 +48,16 @@
   </head>
 
   <!-- Body -->
-  <body class="fixed-top-nav ">
+  <body class=" ">
 
     <!-- Header -->
-    <header>
-
-      <!-- Nav Bar -->
-      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
-        <div class="container">
-          <a class="navbar-brand title font-weight-lighter" href="/">Davit Gogolashvili</a>
-          <!-- Navbar Toggle -->
-          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar top-bar"></span>
-            <span class="icon-bar middle-bar"></span>
-            <span class="icon-bar bottom-bar"></span>
-          </button>
-
-          <div class="collapse navbar-collapse text-right" id="navbarNav">
-            <ul class="navbar-nav ml-auto flex-nowrap">
-
-              <!-- About -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/">About</a>
-              </li>
-              
-
-              <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/publications/">Publications</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-
-              <!-- Toogle theme mode -->
-              <li class="toggle-container">
-                <button id="light-toggle" title="Change theme">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Scrolling Progress Bar -->
-      <progress id="progress" value="0">
-        <div class="progress-container">
-          <span class="progress-bar"></span>
-        </div>
-      </progress>
-    </header>
-
+    <!-- Pages with "standalone: true" show no site navigation, only the theme switch. -->
+    <div class="container standalone-header">
+      <button id="light-toggle" title="Change theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
 
     <!-- Content -->
     <div class="container mt-5">
@@ -128,8 +84,8 @@
     <a class="btn z-depth-0 rg-button" href="#suggest-a-paper" role="button">Suggest a paper</a>
   </p>
 
-  <h2 id="reading-program">Initial reading program</h2>
-  <p class="rg-note">This sequence is tentative.</p>
+  <h2 id="reading-program">Initial reading program <span class="rg-tag">Tentative</span>
+</h2>
   <ol class="rg-papers">
     <li class="rg-paper" data-paper-url="https://arxiv.org/abs/1706.03762" data-paper-title="Attention Is All You Need">
       <div class="rg-paper-title"><a href="https://arxiv.org/abs/1706.03762" rel="external nofollow noopener" target="_blank">Attention Is All You Need</a></div>
@@ -216,7 +172,7 @@
     <div class="rg-form-status" id="rg-form-status" role="status" aria-live="polite"></div>
   </form>
 
-  <script defer src="/assets/js/reading-group.js?v=1791807635"></script>
+  <script defer src="/assets/js/reading-group.js?v=1791808320"></script>
 
 </div>
 

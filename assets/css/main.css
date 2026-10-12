@@ -109,6 +109,12 @@ body.sticky-bottom-footer {
   padding-bottom: 0;
 }
 
+.standalone-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
 .container {
   max-width: 800px;
 }
@@ -1065,8 +1071,21 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
 .reading-group h2 {
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--global-divider-color);
   font-size: 1.5rem;
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 0;
+}
+.reading-group .rg-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.65rem;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 1rem;
+  color: var(--global-theme-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+  vertical-align: middle;
 }
 .reading-group .rg-note,
 .reading-group .rg-status,
@@ -1085,8 +1104,9 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   border: 2px solid var(--global-theme-color);
   margin-left: 0;
   padding: 0.6rem 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  text-transform: none;
 }
 .reading-group .rg-button:hover, .reading-group .rg-button:focus {
   color: var(--global-theme-color);
@@ -1100,7 +1120,7 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   color: var(--global-theme-color);
   background-color: transparent;
   padding: 0.35rem 1rem;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 .reading-group .rg-button-outline:hover, .reading-group .rg-button-outline:focus {
   color: var(--global-hover-text-color);
@@ -1121,14 +1141,25 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   padding-left: 0;
 }
 .reading-group .rg-paper {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.reading-group .rg-paper::marker {
+  color: var(--global-text-color-light);
 }
 .reading-group .rg-paper-title {
+  font-size: 1.05rem;
   font-weight: bolder;
   overflow-wrap: anywhere;
 }
+.reading-group .rg-paper-source {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
+.reading-group .rg-paper-source em {
+  color: inherit;
+}
 .reading-group .rg-paper-description {
-  margin: 0.25rem 0 0;
+  margin: 0.35rem 0 0;
   overflow-wrap: anywhere;
   white-space: pre-line;
 }
@@ -1144,6 +1175,9 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
 }
 .reading-group .rg-form {
   max-width: 40rem;
+  padding: 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
 }
 .reading-group .rg-form label {
   font-weight: 500;
