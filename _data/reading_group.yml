@@ -26,7 +26,7 @@ meetings:
 
 program:
   title: Initial reading program
-  note: This sequence is tentative.
+  tag: Tentative # small label next to the heading; leave empty to remove it
   papers:
     - title: Attention Is All You Need
       authors: Vaswani et al.

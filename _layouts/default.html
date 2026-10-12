@@ -10,10 +10,22 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body class="{% if site.navbar_fixed and page.standalone != true %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
     <!-- Header -->
+    {%- if page.standalone %}
+    <!-- Pages with "standalone: true" show no site navigation, only the theme switch. -->
+    {%- if site.enable_darkmode %}
+    <div class="container standalone-header">
+      <button id="light-toggle" title="Change theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+    {%- endif %}
+    {%- else %}
     {%- include header.html %}
+    {%- endif %}
 
     <!-- Content -->
     <div class="container mt-5">

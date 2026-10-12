@@ -18,7 +18,7 @@ A publication appears only if its `year` is in the `years` list, so add the new 
 
 ## Reading group page
 
-The page at `/reading-group/` ("Statistical Theory of Transformers") is unlisted: no other page links to it, and it is left out of the sitemap.
+The page at `/reading-group/` ("Statistical Theory of Transformers") is unlisted: no other page links to it, and it is left out of the sitemap. It also shows no site navigation at the top, because its front matter sets `standalone: true`.
 
 | To change | Edit |
 | --- | --- |

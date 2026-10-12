@@ -22,6 +22,13 @@ body.sticky-bottom-footer {
   padding-bottom: 0;
 }
 
+// Pages with "standalone: true" have no navbar, only the theme switch.
+.standalone-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
 .container {
   max-width: $max-content-width;
 }

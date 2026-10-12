@@ -4,6 +4,7 @@ permalink: /reading-group/
 title: Statistical Theory of Transformers
 description: WIAS reading group
 sitemap: false
+standalone: true # no site navigation at the top of this page
 ---
 <!-- _pages/reading-group.html: the text comes from _data/reading_group.yml -->
 {%- assign rg = site.data.reading_group -%}
@@ -54,8 +55,7 @@ sitemap: false
   </ul>
   {%- endif %}
 
-  <h2 id="reading-program">{{ rg.program.title | escape }}</h2>
-  <p class="rg-note">{{ rg.program.note | escape }}</p>
+  <h2 id="reading-program">{{ rg.program.title | escape }}{% if rg.program.tag %} <span class="rg-tag">{{ rg.program.tag | escape }}</span>{% endif %}</h2>
   <ol class="rg-papers">
     {%- for paper in rg.program.papers %}
     <li class="rg-paper" data-paper-url="{{ paper.url | escape }}" data-paper-title="{{ paper.title | escape }}">
