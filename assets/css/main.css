@@ -1059,5 +1059,114 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
     grid-column: none;
   }
 }
+/*******************************************************************************
+ * Reading-group page (_pages/reading-group.html)
+ ******************************************************************************/
+.reading-group h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  scroll-margin-top: 5rem;
+}
+.reading-group .rg-note,
+.reading-group .rg-status,
+.reading-group .rg-optional,
+.reading-group .rg-paper-contributor {
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  font-weight: inherit;
+}
+.reading-group .rg-optional {
+  font-weight: normal;
+}
+.reading-group .rg-button {
+  color: var(--global-hover-text-color);
+  background-color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  margin-left: 0;
+  padding: 0.4rem 1.25rem;
+}
+.reading-group .rg-button:hover, .reading-group .rg-button:focus {
+  color: var(--global-theme-color);
+  background-color: transparent;
+}
+.reading-group .rg-button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.reading-group .rg-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.reading-group .rg-refresh {
+  color: var(--global-theme-color);
+  margin: 0;
+  padding: 0 0.25rem;
+  vertical-align: baseline;
+}
+.reading-group .rg-papers {
+  padding-left: 1.5rem;
+}
+.reading-group .rg-papers.rg-suggested {
+  list-style: none;
+  padding-left: 0;
+}
+.reading-group .rg-paper {
+  margin-bottom: 1.25rem;
+}
+.reading-group .rg-paper-title {
+  font-weight: bolder;
+  overflow-wrap: anywhere;
+}
+.reading-group .rg-paper-description {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.reading-group .rg-meetings {
+  list-style: none;
+  padding-left: 0;
+}
+.reading-group .rg-meetings dl {
+  margin-bottom: 1rem;
+}
+.reading-group .rg-meetings dt {
+  font-weight: 500;
+}
+.reading-group .rg-form {
+  max-width: 40rem;
+}
+.reading-group .rg-form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.reading-group .rg-form .form-control {
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+  border: 1px solid var(--global-text-color-light);
+}
+.reading-group .rg-form .form-control:focus {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 0 0 0.1rem var(--global-theme-color);
+}
+.reading-group .rg-form .form-control.is-invalid {
+  border-color: #FF3636;
+}
+.reading-group .rg-form .invalid-feedback {
+  color: #FF3636;
+}
+.reading-group .rg-form-status {
+  margin-top: 1rem;
+}
+.reading-group .rg-form-status p {
+  border-left: 3px solid var(--global-theme-color);
+  padding-left: 0.75rem;
+}
+.reading-group .rg-form-status .rg-error {
+  border-left-color: #FF3636;
+}
 
 /*# sourceMappingURL=main.css.map */
