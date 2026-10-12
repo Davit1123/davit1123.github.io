@@ -77,13 +77,24 @@
     });
   }
 
+  // The sheet's script can fail on its first call after a quiet period, so
+  // loading is tried a few times before the page gives up.
   function loadSuggestions() {
+    return tryLoading(3);
+  }
+
+  function tryLoading(attemptsLeft) {
     return callEndpoint()
       .then(function (answer) {
         if (!answer.ok) throw new Error(answer.message);
         renderSuggestions(answer.suggestions);
       })
       .catch(function () {
+        if (attemptsLeft > 1) {
+          return new Promise(function (resolve) { setTimeout(resolve, 1500); }).then(function () {
+            return tryLoading(attemptsLeft - 1);
+          });
+        }
         showMessage(listBox, 'rg-status', 'The suggestions could not be loaded right now. Please try again later.');
       });
   }

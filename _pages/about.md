@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p> E_mail: davit.gogolashvili[@]wias-berlin[dot]de </p>
+    <p> Email: davit.gogolashvili[@]wias-berlin[dot]de </p>
 #    <p>123 your address street</p>
 #    <p>Your City, State 12345</p>
 
