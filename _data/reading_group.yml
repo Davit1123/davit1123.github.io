@@ -7,12 +7,16 @@
 organization:
   organizer: "Davit Gogolashvili"
   group: "WIAS Research Group 6"
+  when: "Mondays, 14:00–16:00"
+  where: "Room 406 (in person)"
   format: "Each session is led by a moderator: 90 minutes of reading with a 15-minute break."
   # The three texts below allow Markdown: **bold**, and a pasted web address
-  # becomes a link. Replace each TBA once the detail is known.
-  details: "Meetings will take place on TBA, starting from TBA. We will use the Zoom platform, using the link TBA."
-  # Shown as a highlighted note.
-  notice: "**Attention:** The above link is provisional and may change on short notice!"
+  # becomes a link.
+  # A paragraph below the lines above, for example a Zoom link if a meeting
+  # is online.
+  details: ""
+  # Shown as a highlighted note, for example "**Attention:** ...".
+  notice: ""
   # An optional closing line, for example how to get in touch.
   contact: ""
 

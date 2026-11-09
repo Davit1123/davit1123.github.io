@@ -14,7 +14,7 @@ standalone: true # no site navigation at the top of this page
 
   {%- comment %} Organizational details: only the filled-in parts are shown. {% endcomment -%}
   {%- assign org = rg.organization -%}
-  {%- assign labels = 'organizer:Organizer,group:Group,format:Format' | split: ',' %}
+  {%- assign labels = 'organizer:Organizer,group:Group,when:When,where:Where,format:Format' | split: ',' %}
   <dl class="row rg-organization">
     {%- for label in labels -%}
       {%- assign pair = label | split: ':' -%}
