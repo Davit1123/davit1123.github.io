@@ -22,7 +22,7 @@ The page at `/reading-group/` ("Statistical Theory of Transformers") is unlisted
 
 | To change | Edit |
 | --- | --- |
-| Organizational details (organizer, group, format, meeting text, notice, contact) | `_data/reading_group.yml` |
+| Organizational details (organizer, group, when, where, format, extra text, notice, contact) | `_data/reading_group.yml` |
 | Reading program: its sections and their papers | `_data/reading_group.yml` |
 | Page title and layout | `_pages/reading-group.html` |
 
