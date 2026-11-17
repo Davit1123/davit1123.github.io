@@ -125,6 +125,17 @@
     }
   }
 
+  // The date of a session and its moderator.
+  .rg-paper-session {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .rg-paper-date {
+    color: var(--global-theme-color);
+  }
+
   .rg-paper-description {
     margin: 0.35rem 0 0;
     overflow-wrap: anywhere;

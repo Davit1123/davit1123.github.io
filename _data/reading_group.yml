@@ -7,9 +7,9 @@
 organization:
   organizer: "Davit Gogolashvili"
   group: "WIAS Research Group 6"
-  when: "Mondays, 14:00–16:00"
+  when: "Monday, November 23, 14:00"
   where: "Room 406 (in person)"
-  format: "Each session is led by a moderator: 90 minutes of reading with a 15-minute break."
+  format: "Each session is led by a moderator and lasts one hour."
   # The three texts below allow Markdown: **bold**, and a pasted web address
   # becomes a link.
   # A paragraph below the lines above, for example a Zoom link if a meeting
@@ -20,61 +20,32 @@ organization:
   # An optional closing line, for example how to get in touch.
   contact: ""
 
-# The reading program is a list of sections, each with its own numbered papers.
-# - To add a paper, copy one block starting with "- title:" into a section.
-# - To add a section, copy a whole block starting with "- name:".
-# A section's description and a paper's venue, url and description are optional.
+# The sessions of the reading group, in the order they take place; the page
+# numbers them. To add a session, copy one block starting with "- title:".
+# A session's venue, url, date, moderator and description are optional; a
+# date is worth giving while the session is still ahead.
+# Sessions can be grouped: copy a whole block starting with "- name:" and
+# give each group a name (and, optionally, a description).
 program:
-  title: Initial reading program
-  tag: Tentative # small label next to the heading; leave empty to remove it
+  title: Sessions
+  tag: # small label next to the heading, for example Tentative; empty for none
   sections:
-    - name: Introductions
-      papers:
+    - papers:
         - title: Attention Is All You Need
           authors: Vaswani et al.
           venue: NeurIPS 2017
           url: https://arxiv.org/abs/1706.03762
+          moderator: Davit
           description: >-
             The foundational architecture: attention, positional encodings, and
             transformer blocks.
 
-        - title: A Mathematical Perspective on Transformers
-          authors: Geshkovski, Letrouit, Polyanskiy & Rigollet
-          venue: Bulletin of the AMS 2025
-          url: https://arxiv.org/abs/2312.10794
-          description: >-
-            A mathematical entry point, particularly suitable for WIAS. Read the
-            introductory sections first; the attention dynamics can be studied
-            later.
-
-        - title: "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes"
-          authors: Garg, Tsipras, Liang & Valiant
-          venue: NeurIPS 2022
-          url: https://papers.nips.cc/paper_files/paper/2022/hash/c529dba08a146ea8d6cf715ae8930cbe-Abstract-Conference.html
-          description: >-
-            An accessible experimental introduction connecting transformers with
-            familiar statistical estimation problems.
-
-    - name: Nonparametric estimation and minimax theory
-      description: >-
-        Approximation rates, smoothness assumptions, representation learning,
-        and statistical optimality.
-      papers:
-        - title: Approximation and Estimation Ability of Transformers for Sequence-to-Sequence Functions with Infinite Dimensional Input
-          authors: Takakura & Suzuki
-          venue: ICML 2023
-          url: https://proceedings.mlr.press/v202/takakura23a.html
-          description: >-
-            Nonparametric estimation with anisotropic smoothness and dynamic
-            feature extraction.
-
-        - title: Transformers Are Minimax Optimal Nonparametric In-Context Learners
-          authors: Kim, Nakamaki & Suzuki
-          venue: NeurIPS 2024
-          url: https://arxiv.org/abs/2408.12186
-          description: >-
-            Estimation bounds and information-theoretic lower bounds, separating
-            pretraining tasks from in-context examples.
+        - title: Improving Language Understanding by Generative Pre-Training
+          authors: Radford, Narasimhan, Salimans & Sutskever
+          venue: OpenAI, 2018
+          url: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+          date: "Monday, November 23"
+          moderator: Oleg
 
 suggestions:
   invitation: >-

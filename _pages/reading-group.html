@@ -47,7 +47,10 @@ standalone: true # no site navigation at the top of this page
 
   <h2 id="reading-program">{{ rg.program.title | escape }}{% if rg.program.tag %} <span class="rg-tag">{{ rg.program.tag | escape }}</span>{% endif %}</h2>
   {%- for section in rg.program.sections %}
-  <h3 class="rg-section">{{ section.name | escape }}</h3>
+  {%- assign section_name = section.name | append: '' | strip %}
+  {%- if section_name != '' %}
+  <h3 class="rg-section">{{ section_name | escape }}</h3>
+  {%- endif %}
   {%- if section.description %}
   <p class="rg-note">{{ section.description | escape }}</p>
   {%- endif %}
@@ -58,6 +61,15 @@ standalone: true # no site navigation at the top of this page
         {%- if paper.url %}<a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif -%}
       </div>
       <div class="rg-paper-source">{{ paper.authors | escape }}{% if paper.venue %}, <em>{{ paper.venue | escape }}</em>{% endif %}</div>
+      {%- assign session_date = paper.date | append: '' | strip -%}
+      {%- assign moderator = paper.moderator | append: '' | strip -%}
+      {%- if session_date != '' or moderator != '' %}
+      <div class="rg-paper-session">
+        {%- if session_date != '' %}<span class="rg-paper-date">{{ session_date | escape }}</span>{% endif -%}
+        {%- if session_date != '' and moderator != '' %} · {% endif -%}
+        {%- if moderator != '' %}Moderator: {{ moderator | escape }}{% endif -%}
+      </div>
+      {%- endif %}
       {%- if paper.description %}
       <p class="rg-paper-description">{{ paper.description | escape }}</p>
       {%- endif %}
@@ -74,7 +86,7 @@ standalone: true # no site navigation at the top of this page
   {%- else %}
 
   <h2 id="suggested-papers">Suggested papers</h2>
-  <p class="rg-note">Suggestions from participants, newest first. They are kept separate from the reading program above.</p>
+  <p class="rg-note">Suggestions from participants, newest first. They are kept separate from the sessions above.</p>
   <p>
     <button type="button" class="btn z-depth-0 rg-button rg-button-outline" id="rg-refresh" hidden><i class="fas fa-rotate-right" aria-hidden="true"></i> Refresh</button>
   </p>
@@ -87,7 +99,6 @@ standalone: true # no site navigation at the top of this page
 
   <h2 id="suggest-a-paper">Suggest a paper</h2>
   <p>{{ rg.suggestions.invitation | escape }}</p>
-  <p class="rg-note">No account is needed. Your suggestion appears under “Suggested papers” for everyone as soon as it is saved.</p>
 
   <form class="rg-form" id="rg-form">
     <div class="form-group">
