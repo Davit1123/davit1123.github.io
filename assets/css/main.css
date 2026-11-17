@@ -1164,6 +1164,14 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
 .reading-group .rg-paper-source em {
   color: inherit;
 }
+.reading-group .rg-paper-session {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.reading-group .rg-paper-date {
+  color: var(--global-theme-color);
+}
 .reading-group .rg-paper-description {
   margin: 0.35rem 0 0;
   overflow-wrap: anywhere;

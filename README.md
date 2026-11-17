@@ -23,7 +23,7 @@ The page at `/reading-group/` ("Statistical Theory of Transformers") is unlisted
 | To change | Edit |
 | --- | --- |
 | Organizational details (organizer, group, when, where, format, extra text, notice, contact) | `_data/reading_group.yml` |
-| Reading program: its sections and their papers | `_data/reading_group.yml` |
+| Sessions: the paper of each session, its date and its moderator | `_data/reading_group.yml` |
 | Page title and layout | `_pages/reading-group.html` |
 
 An organizational detail left empty is not shown. `_data/reading_group.yml` is public, so a Zoom link entered there is visible to everyone.
